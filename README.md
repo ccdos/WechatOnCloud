@@ -97,6 +97,14 @@ docker compose up -d            # 直接从 GHCR 拉取
 
 > 报错 `error from registry: denied`？说明 GHCR 上还没有该镜像（或包是私有的）。用方式 A 本地构建，或见 [发布到 GHCR](doc/发布到GHCR.md)。
 
+> **镜像源切换（国内 / NAS 加速，推荐）**：`docker-compose.yml` 默认拉 GHCR（`ghcr.io`），大陆网络常拉不动。官方镜像已同步发布到 **Docker Hub**（公开、amd64/arm64 多架构），在 `.env` 里改一行切过去即可：
+>
+> ```bash
+> WOC_IMAGE_PREFIX=docker.io/gloridust       # 改 .env 后：docker compose pull && docker compose up -d
+> ```
+>
+> **飞牛 OS（fnOS）等 NAS 系统内置了 Docker Hub 拉取加速**，用这个源通常比 GHCR 更快更稳，强烈推荐。其它可选源（南京大学反代 `ghcr.nju.edu.cn`、自建阿里云 ACR/腾讯 TCR 等）见 [.env.example](.env.example)。
+
 无论哪种方式，都会拉起面板容器 `woc-panel`（唯一对外服务）。浏览器访问 `http://<NAS_IP>:36080`：
 
 1. 用 `.env` 里设置的管理员账号（默认 **admin / wechat**）登录面板；
