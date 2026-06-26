@@ -43,6 +43,7 @@ const play = <path fill="#fff" d="M20 17l12 7-12 7z" />;
 // key → 字形。default-by-appType 与「内置图标选择器」共用同一张表。
 export const BUILTIN_ICONS: Record<string, Glyph> = {
   wechat: G('#07c160', chat),
+  qq: G('#12B7F5', txt('QQ')),
   chromium: G('#4285f4', globe),
   telegram: G('#2aabee', plane),
   xiaohongshu: G('#ff2442', txt('书')),
@@ -57,6 +58,7 @@ export const BUILTIN_ICONS: Record<string, Glyph> = {
 // 「内置图标」选择器里展示的可选项（顺序即展示顺序）
 export const ICON_CHOICES: { key: string; label: string }[] = [
   { key: 'wechat', label: '微信' },
+  { key: 'qq', label: 'QQ' },
   { key: 'chromium', label: 'Chromium' },
   { key: 'telegram', label: 'Telegram' },
   { key: 'xiaohongshu', label: '小红书' },
@@ -69,6 +71,7 @@ export const ICON_CHOICES: { key: string; label: string }[] = [
 ];
 const DEFAULT_BY_APP: Record<AppType, string> = {
   wechat: 'wechat',
+  qq: 'qq',
   chromium: 'chromium',
   telegram: 'telegram',
   custom: 'app',

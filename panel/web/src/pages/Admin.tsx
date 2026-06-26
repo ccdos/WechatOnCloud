@@ -1739,6 +1739,7 @@ function CreateUser({ instances, onClose, onDone }: { instances: InstanceWithSta
 // 可创建的应用类型。ready=false 的暂时禁用（即将支持）。Telegram（仅 x86_64）与其它应用暂缓。
 const APP_OPTIONS: { type: AppType; desc: string; ready: boolean }[] = [
   { type: 'wechat', desc: '默认', ready: true },
+  { type: 'qq', desc: 'QQ', ready: true },
   { type: 'chromium', desc: '浏览器', ready: true },
   { type: 'custom', desc: '即将支持', ready: false },
 ];

@@ -25,6 +25,11 @@ woc_app_def() {
       APP_BIN="${WOC_CUSTOM_BIN:-}"
       APP_NAME="自定义应用"
       ;;
+    qq)
+      APP_BIN=/config/qq/opt/QQ/qq
+      APP_LAUNCH="$APP_BIN --no-sandbox"
+      APP_NAME=QQ
+      ;;
     *)
       APP_BIN=/config/wechat/opt/wechat/wechat
       APP_LAUNCH="$APP_BIN"
